@@ -15,11 +15,13 @@ const humidity = document.querySelector('.humidity h5');
 const visibility = document.querySelector('.visibility h5');
 const today = document.querySelector('.date');
 
+import getKey from '../utility/key'
+
 
 async function getWeather(lat, lon, units = 'metric') {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=ecc3c7154561f722bbb1675e6523dd23&units=${units}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${getKey().openWeatherKey}&units=${units}`
       );
 
       if (response.ok) {

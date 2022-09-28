@@ -1,11 +1,12 @@
 import { getWeather } from "../utility/getWeather";
+import getKey from '../utility/key'
 
 
 //Load page with inputted city
 async function getCoordinates(city){
     try {
         const geolocation = await fetch(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=ecc3c7154561f722bbb1675e6523dd23`
+          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${getKey().openWeatherKey}`
         );
         if (geolocation.ok) {
             const coordinate = await geolocation.json();
