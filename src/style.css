@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Arial Narrow', sans-serif, 'Times New Roman', serif, Times, serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    position: relative;
+    background-image: url('../images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ebebeb;
+
+}
+
+.container{
+    /* border: 1px solid blue; */
+    margin-right: 3vw;
+    position: relative;
+}
+
+.report{
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+.temp p, .high-low p{
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: center; */
+}
+
+.temp-value{
+    font-size: 6vw;
+    font-weight: 100;
+}
+.temp-value ~ sup{
+    font-size: 2vw;
+    text-indent: 1px;
+}
+.temp-value ~ span{
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+.temp-more{
+    display: flex;
+    justify-items: flex-start;
+    gap: 1rem
+}
+
+.high-low{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.high-low p{
+    font-size: 1.5vw;
+}
+
+.high, .low, .feel{
+    font-size: 1.3vw;
+    font-weight: 100;
+}
+
+.high, .low{
+    margin-top: auto;
+    text-indent: 4px;
+}
+
+sup{
+    font-size: 0.8vw;
+    text-indent: 2px;
+}
+
+span{
+    font-size: 1.3vw;
+}
+.feel-like{
+    flex-direction: column;
+    gap: .8rem;
+}
+.feel-like p:nth-child(2){
+    display: flex;
+}
+.like{
+    color: rgb(148, 144, 144);
+    font-size: 1.3vw;
+}
+
+.weather-details{
+    width: 40vw;
+    max-width: 600px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+}
+.date-location, .weather-condition, .more-details{
+    background-color: rgba(50, 65, 124, 0.6);
+    font-size: 1.5vw;
+    padding: .3rem 4rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgb(69, 77, 125);
+}
+
+.date, .city, .country{
+    font-size: 1.2vw;
+}
+.details{
+    display: flex;
+    gap: 1rem;
+}
+
+.weather-condition{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex: 1 1 1;
+}
+
+.weather-condition h3{
+    font-size: 1.5vw;
+    width: 100%;
+
+}
+
+.weather-condition img{
+    width: 150px;
+    aspect-ratio: 1;
+}
+.weather-name{
+    margin-top: auto;
+}
+
+.more-details{
+    padding: .5rem 2rem;
+    width: 60%;
+    flex: 2 1 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.more-details div{
+    width: 100%;
+    text-align: center;
+}
+
+h5{
+    font-size: 1.1vw;
+    text-align: center;
+}
+.more-details div p{
+    color: rgb(224, 218, 218);
+    font-size: 1vw;
+}
+
+form{
+    /* position: fixed;
+    left: 0; */
+    /* bottom: 15rem; */
+    margin: 2rem;
+}
+
+input[type='search']{
+    width: 80%;
+    border: 0;
+    background: 0;
+    outline: 0;
+    font-size: 1.2rem;
+    padding: .3rem;
+    border-bottom: 3px solid #fff;
+    color: #ebebeb;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+input[type='search']::placeholder{
+    color: rgba(194, 190, 190, .3);
+    font-size: 1rem;
+}
+input[type='search']:focus, input[type='search']:hover{
+    background-color: rgba(50, 65, 124, 0.6);
+    padding-left: .7rem .3rem;
+}
+
+input[type='submit']{
+    background-color: rgba(50, 65, 124, 0.6);
+    padding: .3rem .5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type='submit']:hover{
+    background-color: #fff;
+    border: 1px solid rgb(118, 101, 215);
+}
+
+@media (max-width: 1340px) {
+    .details{
+        gap: .5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .report{
+        padding: .5rem 2rem;
+        position: relative;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+    }   
+    .temp-value{
+        font-size: 7vw;
+    }
+    .temp-value sup{
+        font-size: 3vw;
+    }
+    .temp-value span{
+        font-size: 4vw;
+    }
+
+    .high, .low, .feel, .like{
+        font-size: 3vw;
+    }
+    .high-low p{
+        font-size: 1.5rem;
+        display: flex;
+        align-items: flex-end;
+    }
+    sup{
+        font-size: 1rem;
+        align-self: flex-start;
+    }
+    span{
+        font-size: 1.2rem;
+        align-self: flex-start;
+    }
+    .like p{
+        margin-top: 10px;
+        color: red;
+    }
+    .date, .city, .country, .weather-condition h3{
+        font-size: 1rem;
+    }
+    .info{
+        font-size: .9rem;
+    }
+    h5{
+        font-size: .8rem;
+    }
+}
